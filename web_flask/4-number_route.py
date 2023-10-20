@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
+""" Web application listening on 0.0.0.0, port 5000 """
+from flask import Flask
+=======
 """Starts a Flask web application.
 
 The application listens on 0.0.0.0, port 5000.
@@ -11,10 +15,49 @@ Routes:
 """
 from flask import Flask
 from flask import abort
+>>>>>>> 3a1362a3018cf60f12069a747d6902faac1e5f09
 
 app = Flask(__name__)
 
 
+<<<<<<< HEAD
+@app.route("/")
+def hello_hbnb():
+    """ Display Hello HBNB! """
+    return "Hello HBNB!"
+
+
+@app.route("/hbnb")
+def hbnb():
+    """ Display HBNB! """
+    return "HBNB"
+
+
+@app.route("/c/<text>")
+def c_is_fun(text):
+    """
+    Display 'C' followed by the value of text
+    Replace underscore _ symbols with a space
+    """
+    return "C {}".format(text.replace("_", " "))
+
+
+@app.route("/python/")
+@app.route("/python/<text>")
+def python_is_cool(text="is cool"):
+    """
+    Display 'Python' followed by the value of text
+    Replace underscore _ symbols with a space
+    """
+    return "Python {}".format(text.replace("_", " "))
+
+
+@app.route("/number/<int:n>")
+def number(n):
+    """
+    Display 'n is a number' only if n is an integer
+    """
+=======
 @app.route("/", strict_slashes=False)
 def hello_hbnb():
     """Displays 'Hello HBNB!'."""
@@ -51,8 +94,14 @@ def python(text="is cool"):
 @app.route("/number/<int:n>", strict_slashes=False)
 def number(n):
     """Displays 'n is a number' only if n is an integer."""
+>>>>>>> 3a1362a3018cf60f12069a747d6902faac1e5f09
     return "{} is a number".format(n)
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
+    app.run(host="0.0.0.0", port=5000)
+    app.url_map.strict_slashes = False
+=======
     app.run(host="0.0.0.0")
+>>>>>>> 3a1362a3018cf60f12069a747d6902faac1e5f09
